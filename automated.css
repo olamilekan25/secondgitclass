@@ -1,0 +1,21 @@
+body{
+    background-color: orangered;
+}
+button{
+    background-color: blue;
+    width: 100px;
+    height: 40px;
+    border-radius: 50px;
+    border: black;
+    color:white;
+}
+textarea{
+    text-align: center;
+}
+#message{
+        /* background-image: url('gtbank.jpg'); */
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-size: 65% 50%;
+        position: relative;
+}

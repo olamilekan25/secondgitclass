@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine</title>
+    <link rel="stylesheet" href="automated.css">
+
+    <script>
+        var balance=2500000000000000000;
+        function showBalance(){
+            message.value="Your balance is:";
+            display.value=balance;
+
+        }
+        function cashOut()
+        {
+            message.value="Enter the amount you want to cashout below:";
+        }
+
+        function process()
+        {
+            amount = display.value;
+            if (balance >= amount) {
+                balance = balance - amount;
+                message.value = "please cash out"
+                document.getElementById('cashoutnow').play();
+            }
+            else {
+                message.value = "Insufficient Fund"
+            }
+
+        }
+    </script>
+</head>
+<body>
+    <table border="1" width="80%">
+        <tr>
+            <td colspan="3" ><h2 align="center">AUTOMATED TELLER MACHINE</h2></td>
+        </tr>
+        <tr>
+            <td width="25%"><button>Transfer</button></td>
+            <td rowspan="3" width="50%">
+                <textarea id="message" cols="75" rows="15" disabled="" ></textarea>
+
+
+                <textarea id="display" cols="75" rows="20"></textarea><button onclick="process()">Enter</button></td>
+            <td width="25%"><button onclick="cashOut()">withdraw</button></td>
+        </tr>
+        <tr>
+            <td><button>Recharge</button></td>
+            <td width="25%"><button onclick="showBalance()">Balance</button></td>
+        </tr>
+        <tr>
+            <td width="25%"><button>Subscrition</button></td>
+            <td width="25%"><button>Change pin</button></td>
+        </tr>
+
+    </table>
+    <audio src="cashout.3gpp" id="cashoutnow" preload="auto"></audio>
+</body>
+</html>
